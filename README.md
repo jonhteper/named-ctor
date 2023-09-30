@@ -60,7 +60,7 @@ Whats the problem? First, too boilerplate. Second, its not easy to maintain, if 
 
 ## Using `NamedCtor` macro
 
-The behavior is the same as last example, but now the macro is the responsable to create both `UserValues` and `From` implementation.
+The behavior is the same as last example, but now the macro is the responsable to create both aux struct (`_User`) and `From` implementation.
 
 ```rust
 use named_ctor::NamedCtor;
@@ -80,7 +80,7 @@ impl User {
 }
 
 pub fn main() {
-    let user: User = User::from(UserValues {
+    let user: User = User::from(_User {
         id: 0,
         email: "john@doe.com".to_string(),
         name: "John Doe".to_string(),
